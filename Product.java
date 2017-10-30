@@ -9,8 +9,8 @@ public class Product {
 	private int id_num;
 	private String name;
 	private  LocalDate timeToFalse;
-	private final static String price_rg = "([0-9]){1,}([\\.]){1}([0-9]){1,}";
-	private final static String name_rg = "([a-zA-Z]){1,15}";
+	private final static String PRICE_RG = "([0-9]){1,}([\\.]){1}([0-9]){1,}";
+	private final static String NAME_RG = "([a-zA-Z]){1,15}";
 	public Product () {
 		price = 0.0;
 		id_num = 0;
@@ -68,12 +68,12 @@ public class Product {
 	}
 	
 	public boolean regular_pr() {
-		Pattern pt = Pattern.compile(price_rg);
+		Pattern pt = Pattern.compile(PRICE_RG);
 		Matcher m = pt.matcher(Double.toString(this.price));
 		return m.matches();
 	}
 	public boolean regular_nm() {
-		Pattern pt = Pattern.compile(name_rg);
+		Pattern pt = Pattern.compile(NAME_RG);
 		Matcher m = pt.matcher(this.name);
 		return m.matches();
 	}
@@ -84,9 +84,9 @@ public class Product {
 	 public static void main(String[] args) {
 		 
 	 }
-	 /**регулярка для даты для цены и имени*/
-	 /*для цены проверка на точку*/
-	 /*для имени нормальные ли симвлы*/
-	 /*для даты если та дата уже прошла то её не вводим*/
+	 /**Г°ГҐГЈГіГ«ГїГ°ГЄГ  Г¤Г«Гї Г¤Г ГІГ» Г¤Г«Гї Г¶ГҐГ­Г» ГЁ ГЁГ¬ГҐГ­ГЁ*/
+	 /*Г¤Г«Гї Г¶ГҐГ­Г» ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГІГ®Г·ГЄГі*/
+	 /*Г¤Г«Гї ГЁГ¬ГҐГ­ГЁ Г­Г®Г°Г¬Г Г«ГјГ­Г»ГҐ Г«ГЁ Г±ГЁГ¬ГўГ«Г»*/
+	 /*Г¤Г«Гї Г¤Г ГІГ» ГҐГ±Г«ГЁ ГІГ  Г¤Г ГІГ  ГіГ¦ГҐ ГЇГ°Г®ГёГ«Г  ГІГ® ГҐВё Г­ГҐ ГўГўГ®Г¤ГЁГ¬*/
 	
 }
